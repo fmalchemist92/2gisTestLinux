@@ -31,13 +31,8 @@
     <None Include="test.tst">
       <Filter>Файлы ресурсов</Filter>
     </None>
-    <None Include="test1.tst">
+    <None Include="test1 1.tst">
       <Filter>Файлы ресурсов</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="help.txt">
-      <Filter>Файлы ресурсов</Filter>
-    </Text>
   </ItemGroup>
 </Project>

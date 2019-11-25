@@ -1,7 +1,0 @@
-A program that accepts a file name and a set of parameters as input. Depending on the parameters, the program should work in three modes:
-1) test -f Test.tst -m words -v mother
-prints the number of words "mother" in the file "Test.tst"
-2) test -f Test.tst -m checksum
-prints a 32-bit checksum calculated by the algorithm checksum = word1 + word2 + ... + wordN (word1..wordN - 32-bit words representing the contents of the file)
-3) test -h
-prints information about the program and a description of the parameters.
