@@ -1,6 +1,5 @@
 ﻿#include <string>
 #include <iostream>
-#include <fstream>
 #include <boost/program_options.hpp>
 #include "FileAnalizer.h"
 
@@ -12,17 +11,14 @@ int main(int ac, char* av[]) {
 	std::string task_type;
 	desc.add_options()
 		("help,h", "Show help")
-		("mode,m", po::value<std::string>(&task_type), "Select mode: words, checksum")
-		;
+		("mode,m", po::value<std::string>(&task_type), "Select mode: words, checksum");
 	po::options_description words_desc("words counter mode options");
 	words_desc.add_options()
 		("file,f", po::value<std::string>()->required(), "input file path")
-		("word,v", po::value<std::string>()->required(), "counting word")
-		;
+		("word,v", po::value<std::string>()->required(), "counting word");
 	po::options_description checksum_desc("checksum mode options");
 	checksum_desc.add_options()
-		("file,f", po::value<std::string>()->required(), "input file path")
-		;
+		("file,f", po::value<std::string>()->required(), "input file path");
 	po::variables_map vm;
 	try {
 		po::parsed_options parsed = po::command_line_parser(ac, av).options(desc).allow_unregistered().run();
