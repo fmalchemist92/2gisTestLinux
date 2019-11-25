@@ -1,4 +1,4 @@
-#include <string>
+п»ї#include <string>
 #include <iostream>
 #include <fstream>
 //#include <boost/program_options.hpp>
@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
 	 mode currentMode = mode::help;
 	 std::string path;
 	 std::string word;
-	//считывание аргументов коммандной строки
+	//СЃС‡РёС‚С‹РІР°РЅРёРµ Р°СЂРіСѓРјРµРЅС‚РѕРІ РєРѕРјРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
 	for (int i = 1; i < argc; i++) {
 		if ((!strcmp(argv[i], "-h"))) {
 			currentMode = mode::help;

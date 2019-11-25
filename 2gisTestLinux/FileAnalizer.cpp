@@ -1,4 +1,4 @@
-#include "FileAnalizer.h"
+﻿#include "FileAnalizer.h"
 #include <fstream>
 #include <iostream>
 
