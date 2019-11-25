@@ -10,11 +10,9 @@ void showHelp() {
 	std::string line;
 	std::ifstream help("help.txt");
 	if (help.is_open()) {
-		while (!help.eof()) {
-			getline(help, line);
+		while (getline(help, line)) {
 			std::cout << line << std::endl;
 		}
-		help.close();
 	}
 	else std::cout << "Unable to open file help.txt";
 }

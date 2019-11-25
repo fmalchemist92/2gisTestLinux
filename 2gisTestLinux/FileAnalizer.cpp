@@ -6,7 +6,7 @@ FileAnalizer::FileAnalizer(const std::string& path) :
 	inputFilePath_(path){
 }
 
-unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) {
+unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) const {
 	std::ifstream file(inputFilePath_, std::ios::in);
 	if (!file) throw cantOpenFile("can't open file " + inputFilePath_);
 	unsigned int counter(0);
@@ -16,16 +16,18 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) {
 	return counter;
 }
 
-uint32_t FileAnalizer::checksum32() {
+uint32_t FileAnalizer::checksum32() const {
 	std::ifstream file(inputFilePath_, std::ios::in | std::ios::binary);
 	if (!file) throw cantOpenFile("can't open file " + inputFilePath_);
-	uint32_t summ(0);
-	while (!file.eof()) {
-		uint32_t word32 = 0; // чистый буфер перед каждым считыванием
-		file.read(reinterpret_cast<char*>(&word32), sizeof(word32)); //Читает по 4 байта
-		summ += word32;
-		//std::cout << std::hex << word32 << std::endl;
+	uint32_t checksum = 0;
+	unsigned shift = 0;
+	for (uint32_t ch = file.get(); file; ch = file.get()) {
+		checksum += (ch << shift);
+		shift += 8;
+		if (shift == 32) {
+			shift = 0;
+		}
 	}
-	//std::cout << "summ = " << summ << std::endl;
-	return summ;
+	return checksum;
 }
+
