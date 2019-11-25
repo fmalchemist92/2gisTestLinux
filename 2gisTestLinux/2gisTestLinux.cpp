@@ -6,7 +6,6 @@
 namespace po = boost::program_options;
 
 int main(int ac, char* av[]) {
-	
 	po::options_description desc("General options");
 	std::string task_type;
 	desc.add_options()

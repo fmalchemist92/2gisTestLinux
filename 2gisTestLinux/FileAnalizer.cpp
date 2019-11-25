@@ -1,7 +1,7 @@
-﻿#include "FileAnalizer.h"
-#include <stdexcept>
+﻿#include <stdexcept>
 #include <fstream>
 #include <iostream>
+#include "FileAnalizer.h"
 
 FileAnalizer::FileAnalizer(const std::string& path) :
 	inputFilePath_(path){
