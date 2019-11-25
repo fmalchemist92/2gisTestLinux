@@ -7,7 +7,7 @@ FileAnalizer::FileAnalizer(const std::string& path) :
 	inputFilePath_(path){
 }
 
-unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) const {
+unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) const { 
 	std::ifstream file(inputFilePath_, std::ios::in);
 	if (!file) throw std::runtime_error("can't open file " + inputFilePath_);
 	unsigned int counter(0);
@@ -17,7 +17,7 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) const {
 	return counter;
 }
 
-uint32_t FileAnalizer::checksum32() const {
+uint32_t FileAnalizer::checksum32() const { 
 	std::ifstream file(inputFilePath_, std::ios::in | std::ios::binary);
 	if (!file) throw std::runtime_error("can't open file " + inputFilePath_);
 	uint32_t checksum = 0;
