@@ -1,3 +1,2 @@
-12345678901234567
-גאûגא
-1
+war, wars war! warwar 
+awas war WAR war,war, war

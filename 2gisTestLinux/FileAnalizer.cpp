@@ -1,18 +1,28 @@
 ﻿#include <stdexcept>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 #include "FileAnalizer.h"
 
 FileAnalizer::FileAnalizer(const std::string& path) :
 	inputFilePath_(path){
 }
 
-unsigned int FileAnalizer::wordsCounter(const std::string& countingWord) const { 
+unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const std::string& separators) const {
 	std::ifstream file(inputFilePath_, std::ios::in);
 	if (!file) throw std::runtime_error("can't open file " + inputFilePath_);
 	unsigned int counter(0);
-	for (std::string word; file >> word;) {
-		if (word == countingWord) ++counter;
+	std::string line;
+	while (std::getline(file, line)) {
+		size_t beginOfWord(0);
+		for (size_t i = 0; i < line.length(); ++i) {
+			if (separators.find(line[i]) != std::string::npos) {
+				if (line.substr(beginOfWord, i - beginOfWord) == countingWord) {
+					++counter;
+				}
+				beginOfWord = i + 1;
+			}
+		}
 	}
 	return counter;
 }
