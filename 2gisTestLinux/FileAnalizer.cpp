@@ -17,10 +17,17 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const s
 		size_t beginOfWord(0);
 		for (size_t i = 0; i < line.length(); ++i) {
 			if (separators.find(line[i]) != std::string::npos) {
+				std::cout << line.substr(beginOfWord, i - beginOfWord) << std::endl;
 				if (line.substr(beginOfWord, i - beginOfWord) == countingWord) {
 					++counter;
 				}
 				beginOfWord = i + 1;
+			}
+			else if (i == (line.length() - 1)) {
+				std::cout << line.substr(beginOfWord, i - beginOfWord + 1) << std::endl;
+				if (line.substr(beginOfWord, i - beginOfWord + 1) == countingWord) {
+					++counter;
+				}
 			}
 		}
 	}
