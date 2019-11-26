@@ -14,21 +14,21 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const s
 	unsigned int counter(0);
 	std::string line;
 	while (std::getline(file, line)) {
-		size_t beginOfWord(0);
-		for (size_t i = 0; i < line.length(); ++i) {
-			if (separators.find(line[i]) != std::string::npos) {
-				std::cout << line.substr(beginOfWord, i - beginOfWord) << std::endl;
-				if (line.substr(beginOfWord, i - beginOfWord) == countingWord) {
+		auto beginOfWord(line.begin());
+		auto it = beginOfWord;
+		for (;it != line.end();it++) {
+			if (separators.find(*it) != std::string::npos) {
+				std::cout << std::string(beginOfWord, it) << std::endl;
+				if (std::string(beginOfWord, it) == countingWord) {
 					++counter;
 				}
-				beginOfWord = i + 1;
+				beginOfWord = it + 1;
+				continue;
 			}
-			else if (i == (line.length() - 1)) {
-				std::cout << line.substr(beginOfWord, i - beginOfWord + 1) << std::endl;
-				if (line.substr(beginOfWord, i - beginOfWord + 1) == countingWord) {
-					++counter;
-				}
-			}
+		}
+		std::cout << std::string(beginOfWord, it) << std::endl;
+		if (std::string(beginOfWord, it) == countingWord) {
+			++counter;
 		}
 	}
 	return counter;
