@@ -23,7 +23,6 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const s
 					++counter;
 				}
 				beginOfWord = it + 1;
-				continue;
 			}
 		}
 		std::cout << std::string(beginOfWord, it) << std::endl;
