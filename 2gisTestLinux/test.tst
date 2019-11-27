@@ -41661,7 +41661,7 @@ it were lightheartedly.
 
 "Not take prisoners," Prince Andrew continued: "That by itself would
 quite change the whole war and make it less cruel. As it is we have
-played at war--that's what's vile! We play at magnanimity and all that
+played at war - that's what's vile! We play at magnanimity and all that
 stuff. Such magnanimity and sensibility are like the magnanimity and
 sensibility of a lady who faints when she sees a calf being killed: she
 is so kindhearted that she can't look at blood, but enjoys eating the
@@ -50357,7 +50357,7 @@ necessary money and warrants, and having sent some hussars on in
 advance, he set out with post horses for Voronezh.
 
 Only a man who has experienced it--that is, has passed some months
-continuously in an atmosphere of campaigning and war--can understand the
+continuously in an atmosphere of campaigning and war - can understand the
 delight Nicholas felt when he escaped from the region covered by the
 army's foraging operations, provision trains, and hospitals. When--free
 from soldiers, wagons, and the filthy traces of a camp--he saw villages
@@ -58442,7 +58442,7 @@ still is written about the Berezina, on the French side this is only
 because at the broken bridge across that river the calamities their army
 had been previously enduring were suddenly concentrated at one moment
 into a tragic spectacle that remained in every memory, and on the
-Russian side merely because in Petersburg--far from the seat of war--a
+Russian side merely because in Petersburg--far from the seat of war - a
 plan (again one of Pfuel's) had been devised to catch Napoleon in a
 strategic trap at the Berezina River. Everyone assured himself that all
 would happen according to plan, and therefore insisted that it was just
