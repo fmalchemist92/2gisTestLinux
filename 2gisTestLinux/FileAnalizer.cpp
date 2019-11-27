@@ -1,6 +1,5 @@
 ﻿#include <stdexcept>
 #include <fstream>
-#include <iostream>
 #include <algorithm>
 #include "FileAnalizer.h"
 
