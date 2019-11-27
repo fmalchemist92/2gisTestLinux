@@ -17,7 +17,7 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const s
 	while (std::getline(file, line)) {
 		auto beginOfWord(line.begin());
 		auto it = beginOfWord;
-		for (;it != line.end();it++) {
+		for (;it != line.end(); it++) {
 			if (separators.find(*it) != std::string::npos) {
 				if(std::equal(beginOfWord, it, countingWord.begin())) {
 					++counter;
