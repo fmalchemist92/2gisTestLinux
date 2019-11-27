@@ -2,7 +2,6 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
-#include <string_view>
 #include "FileAnalizer.h"
 
 FileAnalizer::FileAnalizer(const std::string& path) :
