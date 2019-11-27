@@ -19,13 +19,13 @@ unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const s
 		auto it = beginOfWord;
 		for (;it != line.end();it++) {
 			if (separators.find(*it) != std::string::npos) {
-				if (std::string_view(&*beginOfWord, it - beginOfWord) == countingWord) { //стринг вью для избегания реалокаций с обычным стрингом
+				if(std::equal(beginOfWord, it, countingWord.begin())) {
 					++counter;
 				}
 				beginOfWord = it + 1;
 			}
 		}
-		if (std::string(beginOfWord, it) == countingWord) {
+		if (std::equal(beginOfWord, it, countingWord.begin())) {
 			++counter;
 		}
 	}
