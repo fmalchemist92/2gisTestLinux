@@ -14,7 +14,7 @@ public:
 		partWord
 	};
 
-	FileAnalizer(const std::string& path, const std::string& separators = " .,?!;:()'…–\"\t");
+	FileAnalizer(const std::string& path, const std::string& separators = " .,?!;:()'…-–\"\t");
 	unsigned int wordsCounter(std::string countingWord, const CaseSense& caseSense, const SelfSufficiency& selfSufficiency) const;
 	uint32_t checksum32() const; 
 
