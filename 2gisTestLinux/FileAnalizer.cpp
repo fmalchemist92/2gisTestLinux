@@ -28,8 +28,8 @@ unsigned int FileAnalizer::wordsCounter(std::string countingWord, const CaseSens
 			if (std::equal(countingWord.begin(), countingWord.end(), it)) {
 				if (selfSufficiency == SelfSufficiency::wholeWord) {
 					if  ((it == line.begin() || separators_.find(*(it - 1)) != std::string::npos )			 // либо слово в начале строки, либо слову предшествует разделитель
-						&&																					 // вместе условие "отдельно стоящего" слова
-						((it + len == line.end()) || separators_.find(*(it + len)) != std::string::npos) ) { // либо слово в концу строки, либо за ним следует разделитель
+						&&																							// вместе условие "отдельно стоящего" слова
+						((it + len == line.end()) || separators_.find(*(it + len)) != std::string::npos) ) { // либо слово в конце строки, либо за ним следует разделитель
 						++counter;
 						it += len;
 					}
