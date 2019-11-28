@@ -2,6 +2,7 @@
 #include <iostream>
 #include <boost/program_options.hpp>
 #include "FileAnalizer.h"
+#include <chrono>
 
 namespace po = boost::program_options;
 
@@ -28,7 +29,14 @@ int main(int ac, char* av[]) {
 			po::store(po::parse_command_line(ac, av, desc), vm);
 			po::notify(vm);
 			FileAnalizer FA(vm["file"].as<std::string>());
+			auto start = std::chrono::system_clock::now();
 			std::cout << FA.wordsCounter(vm["word"].as<std::string>()) << std::endl;
+			auto end = std::chrono::system_clock::now();
+			//------------------------------
+			int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>
+				(end - start).count();
+			time_t end_time = std::chrono::system_clock::to_time_t(end);
+			std::cout << "Time: " << elapsed_seconds << "ms\n";
 		}
 		else if (task_type == "checksum") {
 			desc.add(checksum_desc);
