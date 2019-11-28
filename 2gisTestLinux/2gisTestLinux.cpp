@@ -36,7 +36,6 @@ int main(int ac, char* av[]) {
 			int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>
 				(end - start).count();
 			time_t end_time = std::chrono::system_clock::to_time_t(end);
-
 			std::cout << "Time: " << elapsed_seconds << "ms\n";
 		}
 		else if (task_type == "checksum") {
