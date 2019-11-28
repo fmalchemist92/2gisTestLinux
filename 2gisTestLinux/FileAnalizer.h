@@ -9,13 +9,12 @@ public:
 		insensetive
 	};
 
-	enum class SelfSufficiency{
+	enum class SelfSufficiency {
 		wholeWord,
 		partWord
 	};
 
 	FileAnalizer(const std::string& path, const std::string& separators = " .,?!;:()'…–\"\t");
-	//unsigned int wordsCounter(const std::string& countingWord, const std::string& separators = " .,?!;:()'…–\"\t") const; //нужно переделать
 	unsigned int wordsCounter(const std::string& countingWord, const CaseSense& caseSense, const SelfSufficiency& selfSufficiency) const;
 	uint32_t checksum32() const; 
 
