@@ -9,18 +9,20 @@ FileAnalizer::FileAnalizer(const std::string& path, const std::string& separator
 }
 
 
-unsigned int FileAnalizer::wordsCounter(const std::string& countingWord, const CaseSense& caseSense, const SelfSufficiency& selfSufficiency) const {
+unsigned int FileAnalizer::wordsCounter(std::string countingWord, const CaseSense& caseSense, const SelfSufficiency& selfSufficiency) const {
 	std::ifstream file(inputFilePath_, std::ios::in);
 	if (!file) throw std::runtime_error("can't open file " + inputFilePath_);
 	unsigned int counter(0);
 	std::string line;
 	if (caseSense == CaseSense::insensetive) {
-		//искомое слово к нижнему регистру
+		std::transform(countingWord.begin(), countingWord.end(), countingWord.begin(),
+			[](unsigned char c) { return std::tolower(c); });
 	}
 	auto len = countingWord.end() - countingWord.begin();
 	while (std::getline(file, line)) {
 		if (caseSense == CaseSense::insensetive) {
-			//считанную строку к нижнему регистру
+			std::transform(line.begin(), line.end(), line.begin(),
+				[](unsigned char c) { return std::tolower(c); });
 		}
 		for (auto it = line.begin(); len <= (line.end() - it);) {
 			if (std::equal(countingWord.begin(), countingWord.end(), it)) {
