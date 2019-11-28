@@ -30,7 +30,7 @@ int main(int ac, char* av[]) {
 			po::notify(vm);
 			FileAnalizer FA(vm["file"].as<std::string>());
 			auto start = std::chrono::system_clock::now();
-			std::cout << FA.wordsCounter(vm["word"].as<std::string>()) << std::endl;
+			std::cout << FA.wordsCounter(vm["word"].as<std::string>(), FileAnalizer::CaseSense::sensetive, FileAnalizer::SelfSufficiency::wholeWord) << std::endl;
 			auto end = std::chrono::system_clock::now();
 			//------------------------------
 			int elapsed_seconds = std::chrono::duration_cast<std::chrono::milliseconds>
